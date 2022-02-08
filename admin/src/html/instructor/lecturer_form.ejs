@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('../layout/_head.ejs')%>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <%- include('../layout/_header.ejs')%>
+
+        <%- include('../layout/_sidebar.ejs')%>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="title">강사/교관관리</h1>
+                        </div>
+                        <div class="col">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">강사/교관관리</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content" data-menu="lecturer">
+                <div class="container-fluid">
+                    <h3 class="table-title">강사 정보<strong class="text-danger font-size-14px">*필수</strong></h3>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width:150px">
+                            <col>
+                            <col style="width:150px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>강사번호<strong class="text-danger">*</strong></th>
+                                <td>2021001</td>
+                                <th rowspan="3">사진</th>
+                                <td rowspan="3">
+                                    <div class="d-inline-flex m-b-10">
+                                        <div class="custom-file-img">
+                                            <input type="file" name="" accept="image/*" id="profile-img">
+                                            <label class="btn btn-primary btn-sm m-0" for="profile-img" lang="ko">파일 업로드</label>
+                                        </div>
+                                        <button class="btn btn-dark btn-sm m-l-10" >삭제</button>
+                                    </div>
+                                    <div class="profile-thumb" style="display: none;">
+                                        <img src="../../assets/images/@portrait.png" alt="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이름<strong class="text-danger">*</strong></th>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <th>생년월일<strong class="text-danger">*</strong></th>
+                                <td>19940707</td>
+                            </tr>
+                            <tr>
+                                <th>아이디<strong class="text-danger">*</strong></th>
+                                <td colspan="3">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto"><input type="text" class="form-control width-200px"></div>
+                                        <div class="col-auto"><button class="btn btn-primary">아이디 중복체크</button></div>
+                                        <!-- <div class="col-auto">  <span  class="form-text text-danger">
+                                            중복된 아이디 입니다.</span></div> -->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>비밀번호<strong class="text-danger">*</strong></th>
+                                <td>
+                                    <div class="row row-10">
+                                        <div class="col-12"><input type="password" class="form-control width-200px"></div>
+                                        <div class="col-12">
+                                            <span  class="form-text text-danger">
+                                            8~12자 영문, 숫자, 특수문자(~`!@#$%^&*()-) 포함 사용</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th>비밀번호 확인<strong class="text-danger">*</strong></th>
+                                <td>
+                                    <div class="row row-10">
+                                        <div class="col-12"><input type="password" class="form-control width-200px"></div>
+                                        <div class="col-12">
+                                            <span  class="form-text text-danger">
+                                                비밀번호 변경시 입력하세요.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>이메일<strong class="text-danger">*</strong></th>
+                                <td colspan="3">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto"><input type="text" class="form-control width-200px"></div>
+                                        <div class="col-auto">@</div>
+                                        <div class="col-auto"><input type="text" class="form-control width-200px"></div>
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select width-200px">
+                                                <option value="">직접입력</option>
+                                                <option value="">20</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>자택 연락처</th>
+                                <td colspan="3">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select width-90px">
+                                                <option value="">02</option>
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-auto"><input type="number" class="form-control width-200px"></div>
+                                        <div class="col-auto"><input type="number" class="form-control width-200px"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>휴대전화 번호<strong class="text-danger">*</strong></th>
+                                <td colspan="3">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <select name="" id="" class="custom-select width-90px">
+                                                <option value="">010</option>
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-auto"><input type="number" class="form-control width-200px"></div>
+                                        <div class="col-auto"><input type="number" class="form-control width-200px"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>주소</th>
+                                <td colspan="3">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" name="" value="" id="" class="form-control width-300px">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" name="" value="" id="" class="form-control">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button type="button" class="btn btn-dark" onclick="">주소 검색</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="table-title">직위</h3>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width:150px">
+                            <col>
+                            <col style="width:150px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>직위</th>
+                                <td colspan="3">
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">직위 선택 </option>
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row row-10 justify-content-center mt-3">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary min-width-90px" onclick="history.back();">취소</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary min-width-90px" data-toggle="modal" data-target="#modal-req-insert">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <%- include('../layout/_footer.ejs')%>
+
+    <%- include('../layout/_modal.ejs')%>
+
+    <script>
+        $(document).ready(function () {});
+        
+    </script>
+</body>
+
+</html>

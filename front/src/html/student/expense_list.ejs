@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('../layout/_head.ejs')%>
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <%- include('../layout/_header.ejs')%>
+
+        <div id="container-block">
+            <div id="content">
+
+                <div class="visual expense">
+                    <div class="container">
+                        <h1 class="title">정비교육실습</h1>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <div class="sub-nav">
+                        <div class="subject">정비교육실습</div>
+                        <div class="breadcrumb">
+                            <ol>
+                                <li><i class="icon-breadcrumb-home"></i></li>
+                                <li>정비교육실습</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="inquery-area">
+                        <table class="table table-bordered">
+                            <colgroup>
+                                <col style="width: 170px">
+                                <col>
+                                <col style="width: 170px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>연도</th>
+                                    <td>
+                                        <select name="" id="" class="form-control width-240px">
+                                            <option value="">연도</option>
+                                        </select>
+                                    </td>
+                                    <th>학기 선택</th>
+                                    <td>
+                                        <select name="" id="" class="form-control width-240px">
+                                            <option value="">전체</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btns">
+                            <button class="btn btn-primary">검색</button>
+                        </div>
+                    </div>
+
+                    <div class="list-title-wrap">
+                        <div>
+                            <i class="icon-list-title"></i>
+                            <p class="title">정비교육실습</p>
+                        </div>
+                    </div>
+
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-bordered" id="datatable1">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>연도</th>
+                                    <th>학기</th>
+                                    <th>구분</th>
+                                    <th>교육내용</th>
+                                    <th>금액</th>
+                                    <th>고지서</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(var i = 10; i > 0 ; i--){ %>
+                                <tr>
+                                    <td class="text-center">2021년도</td>
+                                    <td class="text-center">2학기</td>
+                                    <td class="text-center">정비교육실습</td>
+                                    <td class="text-center">정비교육실습관련 비용</td>
+                                    <td class="text-center">800,000원</td>
+                                    <td class="text-center"> <button type="button" class="btn btn-gray4 btn-sm btn-sm-round min-width-70px" onclick="">출력</button> </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 모달-->
+        <%- include('../modal/modal.ejs')%>
+        <!-- 공통모달(로그인/ 삭제 관련) -->
+        <%- include('../modal/common.ejs')%>
+
+        <%- include('../layout/_footer.ejs')%>
+
+    </div>
+
+
+    <script>
+    </script>
+
+</body>
+
+</html>

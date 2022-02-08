@@ -1,0 +1,39 @@
+.student-courses-profile{
+    dl{
+        display: flex;flex-wrap: wrap;
+        & + dl{margin-top: .5rem;}
+        dt{
+            font-weight: 500;
+            &::after{content: ' : ';margin-right: 5px;}
+        }
+        dd{margin-right: 20px;color: #666;margin-bottom: 0;}
+    }
+}
+
+.profile-thumb{
+    width:100px;
+    height:100px;
+    overflow: hidden;
+    border: 1px solid #ececec;
+    vertical-align: middle;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+.custom-file-img{
+    input{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip:rect(0,0,0,0);
+        border: 0;
+    }
+}
+

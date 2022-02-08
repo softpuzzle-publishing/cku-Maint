@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('../layout/_head.ejs')%>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <%- include('../layout/_header.ejs')%>
+
+        <%- include('../layout/_sidebar.ejs')%>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="title">학생교육 관리</h1>
+                        </div>
+                        <div class="col">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">교육시간관리</a></li>
+                                <li class="breadcrumb-item">학생교육관리</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content p-b-50" data-menu="edu-time">
+                <div class="container-fluid">
+                    <div class="box p-3">
+                        <div class="student-courses-profile">
+                            <dl>
+                                <dt>학생</dt>
+                                <dd>김학생 (20190102)</dd>
+                            </dl>
+                            <dl>
+                                <dt>생년월일</dt>
+                                <dd>1999.02.02</dd>
+                                <dt>성별</dt>
+                                <dd>여</dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대폰번호</dt>
+                                <dd>010-0000-0000</dd>
+                                <dt>이메일</dt>
+                                <dd>aaabbbccc22@gmail.com</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between align-items-end mb-3 mt-4">
+                        <div class="col-auto">
+                            <b>2021년 2학기 과목 목록</b>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-bordered" id="datatable1">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="text-center" rowspan="2">과목명</th>
+                                    <th class="text-center" colspan="2">학과인정시간</th>
+                                    <th class="text-center" colspan="2">실기인정시간</th>
+                                    <th class="text-center" colspan="2">합계</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center">기준시간</th>
+                                    <th class="text-center">인정시간</th>
+                                    <th class="text-center">기준시간</th>
+                                    <th class="text-center">인정시간</th>
+                                    <th class="text-center">기준시간</th>
+                                    <th class="text-center">인정시간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(var i = 10; i > 0 ; i--){ %>
+                                <tr>
+                                    <td class="text-center">헬리콥터공학</td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center width-150px">
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center width-150px">
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td class="text-center">6</td>
+                                    <td class="text-center">6</td>
+                                </tr>
+                                <% } %>
+                                <tr class="bg-light-gray">
+                                    <td class="text-center font-weight-bold">합계</td>
+                                    <td class="text-center font-weight-bold">9</td>
+                                    <td class="text-center font-weight-bold">9</td>
+                                    <td class="text-center font-weight-bold">9</td>
+                                    <td class="text-center font-weight-bold">9</td>
+                                    <td class="text-center font-weight-bold">18</td>
+                                    <td class="text-center font-weight-bold">18</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row row-10 justify-content-center mt-3">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary min-width-90px" onclick="history.back();">취소</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary min-width-90px" data-toggle="modal" data-target="#modal-req-insert">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <%- include('../layout/_footer.ejs')%>
+
+    <%- include('../layout/_modal.ejs')%>
+
+    <script>
+        $(document).ready(function () {});
+    </script>
+</body>
+
+</html>

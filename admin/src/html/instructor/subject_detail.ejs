@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('../layout/_head.ejs')%>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <%- include('../layout/_header.ejs')%>
+
+        <%- include('../layout/_sidebar.ejs')%>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="title">강사/교관관리</h1>
+                        </div>
+                        <div class="col">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">강사/교관관리</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content" data-menu="subject">
+                <div class="container-fluid">
+                    <h3 class="table-title">강의과목</h3>
+                    <table class="table table-bordered table-fixed">
+                        <colgroup>
+                            <col style="width:150px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>강사선택</th>
+                                <td>
+                                    홍길동
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>연도</th>
+                                <td>
+                                    2020
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강의학기</th>
+                                <td>
+                                    2학기
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강의구분</th>
+                                <td>
+                                    이론
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강의과목</th>
+                                <td>
+                                    왕복엔진 윤활 및 시동계통 실습
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강의기간</th>
+                                <td>
+                                    2021. 07. 01 ∼ 09. 30
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강의시간</th>
+                                <td>
+                                    24<span>시간</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row row-10 justify-content-center mt-3">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary min-width-90px" onclick="history.back();">취소</button>
+                        </div>
+                        <div class="col-auto">
+                            <a href="subject_form.html" class="btn btn-primary min-width-90px">수정</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <%- include('../layout/_footer.ejs')%>
+
+    <%- include('../layout/_modal.ejs')%>
+
+    <script>
+        $(document).ready(function () {});
+        
+    </script>
+</body>
+
+</html>

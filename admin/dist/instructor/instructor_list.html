@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>항공운항학과 관리자 시스템 - 가톨릭관동대학교</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" sizes="192x192">
+
+    <link rel="stylesheet" href="../assets/lib/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/lib/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/lib/chart/Chart.min.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Additional style(개발단에서 수정 및 추가 필요한 경우 additional.css에 작성)  -->
+    <link rel="stylesheet" href="../assets/css/additional.css">
+
+
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/lib/moment/moment.min.js"></script>
+    <script src="../assets/lib/bootstrap/js/bootstrap-select.js"></script>
+    <script src="../assets/lib/swiper/js/swiper.min.js"></script>
+    <script src="../assets/lib/chart/Chart.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+
+    <script src="/assets/js/adminlte.min.js" defer></script>
+    <script src="/assets/js/ui.js" defer></script>
+
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <div class="ml-auto">
+                <div class="d-flex align-items-center pr-2">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-user-circle mr-2 font-size-30px"></i>
+                        <a href="">관리자</a>
+                    </div>
+                    <button type="button" class="btn btn-light btn-round ml-4">로그아웃</button>
+                </div>
+            </div>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary">
+            <!-- Brand Logo -->
+            <a href="#none" class="brand-link text-center">
+                <!-- <span class="brand-image"><img src="//assets/images/logo.svg" alt="서초구 Logo" class="img-circle"></span> -->
+                <img src="/assets/images/logo.svg" alt="" style="width:162px">
+                <div class="mt-1">항공정비학과</div>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <nav>
+                    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item has-treeview">
+                            <a href="../student/student_list.html" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    학생관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../student/student_list.html" class="nav-link" data-menu="student">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>재학생관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../student/practice_student_list.html" class="nav-link" data-menu="practice-student">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>비행실습생관리</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="../edu/student_edu_list.html" class="nav-link">
+                                <i class="nav-icon fas fa-school"></i>
+                                <p>
+                                    교육시간관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../edu/student_edu_list.html" class="nav-link" data-menu="edu-time">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>학생교육관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../edu/curriculum_list.html" class="nav-link" data-menu="curriculum">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>교육과정관리</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../traning/traning_list.html" class="nav-link" data-menu="traning">
+                                <i class="nav-icon fas fa-plane"></i>
+                                <p>
+                                    비행실습관리
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../expense/expense_list.html" class="nav-link" data-menu="expense">
+                                <i class="nav-icon fas fa-receipt"></i>
+                                <p>
+                                    실습비관리
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="../instructor/lecturer_list.html" class="nav-link">
+                                <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                                <p>
+                                    강사/교관관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../instructor/lecturer_list.html" class="nav-link" data-menu="lecturer">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>강사등록관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../instructor/subject_list.html" class="nav-link" data-menu="subject">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>강사과목관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../instructor/instructor_list.html" class="nav-link" data-menu="instructor">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>교관등록관리</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="../board/notice_list.html" class="nav-link">
+                                <i class="nav-icon fas fa-clipboard"></i>
+                                <p>
+                                    게시판관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../board/notice_list.html" class="nav-link" data-menu="notice">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>공지사항</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../board/resource_list.html" class="nav-link" data-menu="resource">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>자료실</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../board/qna_list.html" class="nav-link" data-menu="qna">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>1:1문의</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../board/popup_list.html" class="nav-link" data-menu="popup">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>팝업관리</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="../system/insider_list.html" class="nav-link">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    시스템관리
+                                    <i class="right fas fa-angle-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../system/insider_list.html" class="nav-link" data-menu="insider">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>내부사용자관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../system/password_change.html" class="nav-link" data-menu="password">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>비밀번호변경</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../system/academic_import.html" class="nav-link" data-menu="academic">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>학사정보 가져오기</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="title">강사/교관관리</h1>
+                        </div>
+                        <div class="col">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">강사/교관관리</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content" data-menu="instructor">
+                <div class="container-fluid">
+                    <div class="inquery-area">
+                        <table class="table table-bordered">
+                            <colgroup>
+                                <col style="width: 150px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>등록일</th>
+                                    <td colspan="3">
+                                        <div class="row row-10  align-items-center">
+                                            <div class="col-auto">
+                                                <input type="text" class="form-control form-datepicker">
+                                            </div>
+                                            <div class="col-auto">~</div>
+                                            <div class="col-auto">
+                                                <input type="text" class="form-control form-datepicker">
+                                            </div>
+                                            <div class="col">
+                                                <div class="btn-group" role="group">
+                                                    <button type="button" class="btn btn-outline-secondary active">오늘</button>
+                                                    <button type="button" class="btn btn-outline-secondary">어제</button>
+                                                    <button type="button" class="btn btn-outline-secondary">3일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">7일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">6개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">전체</button>
+                                                </div>
+                                                <script>
+                                                    $('.btn-group .btn').on('click', function(e) {
+                                                        $(this).siblings().removeClass('active');
+                                                        $(this).addClass('active');
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>검색</th>
+                                    <td colspan="3">
+                                        <input type="text" class="form-control" placeholder="교관명, 교관번호 검색">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btns">
+                            <button type="button" class="btn btn-dark min-width-90px">검색</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between align-items-end mb-3">
+                        <div class="col-auto">
+                            <b>Total : 000</b>,
+                            Page 1/3
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary mr-1" data-target="#modal-delete" data-toggle="modal">선택 삭제</button>
+                            <a href="instructor_form.html" class="btn btn-danger mr-1">교관등록</a>
+                            <button type="button" class="btn btn-outline-primary mr-1">엑셀다운로드</button>
+                            <select class="custom-select w-auto">
+                                <option>10</option>
+                                <option>30</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list">
+                        <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-bordered" id="datatable1">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width: 50px">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="checkAll">
+                                            <label class="custom-control-label" for="checkAll"><label>
+                                        </div>
+                                    </th>
+                                    <th class="text-center">번호</th>
+                                    <th class="text-center">교관번호</th>
+                                    <th class="text-center">교관명</th>
+                                    <th class="text-center">생년월일</th>
+                                    <th class="text-center">이메일</th>
+                                    <th class="text-center">휴대폰</th>
+                                    <th class="text-center">등록일</th>
+                                    <th class="text-center">경력증명</th>
+                                    <th class="text-center">관리</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check10">
+                                            <label class="custom-control-label" for="check10"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">10</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check9">
+                                            <label class="custom-control-label" for="check9"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">9</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check8">
+                                            <label class="custom-control-label" for="check8"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">8</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check7">
+                                            <label class="custom-control-label" for="check7"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">7</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check6">
+                                            <label class="custom-control-label" for="check6"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">6</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check5">
+                                            <label class="custom-control-label" for="check5"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check4">
+                                            <label class="custom-control-label" for="check4"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check3">
+                                            <label class="custom-control-label" for="check3"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check2">
+                                            <label class="custom-control-label" for="check2"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="custom-control custom-checkbox without-label">
+                                            <input type="checkbox" class="custom-control-input" id="check1">
+                                            <label class="custom-control-label" for="check1"><label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="instructor_detail.html" class="text-underline">김교관</a></td>
+                                    <td class="text-center">1999.02.02</td>
+                                    <td class="text-center">aaabbbccc1@gmail.com</td>
+                                    <td class="text-center">010-0000-0000</td>
+                                    <td class="text-center">2021-10-11</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary" onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="instructor_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <a href="#none" class="first" aria-hidden="true">
+                            <i class="fas fa-angle-double-left"></i>
+                        </a>
+                        <a href="#none" class="prev mr-3" aria-hidden="true">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                        <a href="#none" class="active">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none">6</a>
+                        <a href="#none">7</a>
+                        <a href="#none">8</a>
+                        <a href="#none">9</a>
+                        <a href="#none">10</a>
+                        <a href="#none" class="next ml-3" aria-hidden="true">
+                            <i class="fas fa-angle-right"></i>
+                        </a>
+                        <a href="#none" class="end" aria-hidden="true">
+                            <i class="fas fa-angle-double-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+
+
+    <!-- 모달 : 삭제 여부 확인 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-delete">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <i class="fas fa-exclamation-circle mr-2"></i>
+                        <p>삭제 하시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary">확인</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 등록 완료 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-success">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <p>정상적으로 등록 되었습니다</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 필수항목 미입력 시 입력요청 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-req-insert">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <i class="fas fa-exclamation-circle mr-2"></i>
+                        <p>{{항목명}}을 입력해주세요</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 팝업 미리보기 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-preview">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">팝업 미리보기</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="popup-preview">
+                        <div class="preview">
+                            <img src="https://images.unsplash.com/photo-1602497223003-531c7a191886?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 비밀번호 변경 완료 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-password-changed">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <p>비밀번호가 변경되었습니다. <br>재 로그인 해주시기 바랍니다.</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 학생 수강과목 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-courses">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">수강과목</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="box p-3">
+                        <div class="student-courses-profile">
+                            <dl>
+                                <dt>학생</dt>
+                                <dd>김학생 (20190102)</dd>
+                            </dl>
+                            <dl>
+                                <dt>생년월일</dt>
+                                <dd>1999.02.02</dd>
+                                <dt>성별</dt>
+                                <dd>여</dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대폰번호</dt>
+                                <dd>010-0000-0000</dd>
+                                <dt>이메일</dt>
+                                <dd>aaabbbccc22@gmail.com</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <table class="table table-bordered mb-0 mt-4">
+                        <colgroup>
+                            <col style="width: 50%">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center">과목명</th>
+                                <th class="text-center">학점</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">왕복엔진</td>
+                                <td class="text-center">3</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">열역학</td>
+                                <td class="text-center">3</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">항공정비실무영어</td>
+                                <td class="text-center">3</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">항공정비일반</td>
+                                <td class="text-center">3</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">왕복엔진실습</td>
+                                <td class="text-center">3</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">창의적 공학설계</td>
+                                <td class="text-center">3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 실습과목지정 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-practice-designation">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 900px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">실습과목지정</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered mb-0">
+                        <colgroup>
+                            <col style="width: 24%">
+                            <col style="width: 28%">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center">구분</th>
+                                <th class="text-center">실습과목</th>
+                                <th class="text-center">교육기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center" rowspan="2">항공실습</td>
+                                <td class="text-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="chkPractice1">
+                                        <label for="chkPractice1" class="custom-control-label">항공실습1</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datetimepicker w-100">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datetimepicker w-100">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="chkPractice2">
+                                        <label for="chkPractice2" class="custom-control-label">항공실습2</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datetimepicker w-100">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datetimepicker w-100">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">시뮬레이터교육</td>
+                                <td class="text-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="chkPractice3">
+                                        <label for="chkPractice3" class="custom-control-label">시뮬레이터교육</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datetimepicker w-100">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datetimepicker w-100">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                    <button type="button" class="btn btn-primary">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 학생 실습과목 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-practice-courses">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 740px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">실습과목</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="box p-3">
+                        <div class="student-courses-profile">
+                            <dl>
+                                <dt>학생</dt>
+                                <dd>김학생 (20190102)</dd>
+                            </dl>
+                            <dl>
+                                <dt>생년월일</dt>
+                                <dd>1999.02.02</dd>
+                                <dt>성별</dt>
+                                <dd>여</dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대폰번호</dt>
+                                <dd>010-0000-0000</dd>
+                                <dt>이메일</dt>
+                                <dd>aaabbbccc22@gmail.com</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <table class="table table-bordered mb-0 mt-4">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 29%">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center">구분</th>
+                                <th class="text-center">실습과목</th>
+                                <th class="text-center">교육기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center" rowspan="2">항공실습</td>
+                                <td class="text-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="chkPractice1">
+                                        <label for="chkPractice1" class="custom-control-label">항공실습1</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker w-100">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker w-100">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="chkPractice2">
+                                        <label for="chkPractice2" class="custom-control-label">항공실습2</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker w-100">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker w-100">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">시뮬레이터교육</td>
+                                <td class="text-left">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="chkPractice3">
+                                        <label for="chkPractice3" class="custom-control-label">시뮬레이터교육</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker w-100">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-datepicker w-100">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                    <button type="button" class="btn btn-primary">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 비행실습이력 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-practice-history">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">비행실습이력</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="box p-3">
+                        <div class="student-courses-profile">
+                            <dl>
+                                <dt>학생</dt>
+                                <dd>김학생 (20190102)</dd>
+                            </dl>
+                            <dl>
+                                <dt>생년월일</dt>
+                                <dd>1999.02.02</dd>
+                                <dt>성별</dt>
+                                <dd>여</dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대폰번호</dt>
+                                <dd>010-0000-0000</dd>
+                                <dt>이메일</dt>
+                                <dd>aaabbbccc22@gmail.com</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <h2 class="table-title">비행 목록</h2>
+                    <div class="row justify-content-between align-items-end mb-3">
+                        <div class="col-auto">
+                            <b>Total : 000</b>,
+                            Page 1/3
+                        </div>
+                        <div class="col-auto">
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center">번호</th>
+                                <th class="text-center">구분</th>
+                                <th class="text-center">실습과목</th>
+                                <th class="text-center">비행일</th>
+                                <th class="text-center">담당교관</th>
+                                <th class="text-center">(운항번호)항공기</th>
+                                <th class="text-center">Hobbs(before)</th>
+                                <th class="text-center">Hobbs(after)</th>
+                                <th class="text-center">비행시간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td class="text-center">10</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">9</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">8</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">7</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">6</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">5</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">4</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td class="text-center">항공실습</td>
+                                <td class="text-center">항공실습1</td>
+                                <td class="text-center">2021-10-08</td>
+                                <td class="text-center">김교관</td>
+                                <td class="text-center">HL1156</td>
+                                <td class="text-center">10:00</td>
+                                <td class="text-center">12:00</td>
+                                <td class="text-center">02:00</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <a href="#none" class="first" aria-hidden="true">
+                            <i class="fas fa-angle-double-left"></i>
+                        </a>
+                        <a href="#none" class="prev mr-3" aria-hidden="true">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                        <a href="#none" class="active">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none">6</a>
+                        <a href="#none">7</a>
+                        <a href="#none">8</a>
+                        <a href="#none">9</a>
+                        <a href="#none">10</a>
+                        <a href="#none" class="next ml-3" aria-hidden="true">
+                            <i class="fas fa-angle-right"></i>
+                        </a>
+                        <a href="#none" class="end" aria-hidden="true">
+                            <i class="fas fa-angle-double-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 학기중 이수과목 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-semester-courses">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document" style="max-width: 1000px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">학기중 이수 과목</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <nav class="my-tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#t1" role="tab">1학년</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#t2" role="tab">2학년</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#t3" role="tab">3학년</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="t1" role="tabpanel">
+                            <table class="table table-bordered mb-0 mt-4">
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col style="width:70px">
+                                    <col>
+                                    <col>
+                                    <col style="width:70px">
+                                    <col style="width:180px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">학기</th>
+                                        <th class="text-center">구분</th>
+                                        <th class="text-center">과목</th>
+                                        <th class="text-center">시행규칙교과목</th>
+                                        <th class="text-center">인정시간</th>
+                                        <th class="text-center">이수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1학년 1학기</td>
+                                        <td class="text-center">이론</td>
+                                        <td class="text-center"></td>
+                                        <td class="text-left"></td>
+                                        <td class="text-center">25</td>
+                                        <td class="text-center">
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                                <label for="customRadio1" class="custom-control-label">이수</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                                <label for="customRadio2" class="custom-control-label">미이수</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="t2" role="tabpanel">
+
+                        </div>
+                        <div class="tab-pane" id="t3" role="tabpanel">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                    <button type="button" class="btn btn-primary">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 모달 : 방학 중 이수과목 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-vacation-courses">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document" style="max-width: 1300px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">방학중 이수 과목</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered mb-0 mt-4">
+                        <colgroup>
+                            <col>
+                            <col style="width:25%">
+                            <col style="width:25%">
+                            <col style="width:60px">
+                            <col>
+                            <col style="width:60px">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-center" rowspan="2">구분</th>
+                                <th class="text-center" colspan="2">실습과목</th>
+                                <th class="text-center" colspan="4">교육기간</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center">학과 교과목</th>
+                                <th class="text-center">실기 교과목</th>
+                                <th class="text-center">학과</th>
+                                <th class="text-center">이수</th>
+                                <th class="text-center">실기</th>
+                                <th class="text-center">이수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center" rowspan="2">정비일반</td>
+                                <td class="text-left">유체 라인 및 피팅</td>
+                                <td class="text-left">유체 라인 및 피팅 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">25</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">검사원리 및 기업</td>
+                                <td class="text-left">검사원리 및 기법 실습</td>
+                                <td class="text-center">30</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" rowspan="8">항공기초</td>
+                                <td class="text-left">항공기 금속구조 수리</td>
+                                <td class="text-left">항공기 금속구조 수리 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">30</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기 용접</td>
+                                <td class="text-left">항공기 용접 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">30</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">첨단 복합 소재</td>
+                                <td class="text-left">첨단 복합 소재 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">40</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기 유압계통</td>
+                                <td class="text-left">항공기 유압계통 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">30</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기 착륙장치 계통</td>
+                                <td class="text-left">항공기 착륙장치 계통 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">30</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기 연료계통</td>
+                                <td class="text-left">항공기 연료계통 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">30</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">화재방지, 제•방빙 및 제우계통</td>
+                                <td class="text-left">화재방지, 제•방빙 및 제우계통 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">객실공조 및 공기압력 제어계통</td>
+                                <td class="text-left">객실공조 및 공기압력 제어계통 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">25</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" rowspan="10">항공발동기</td>
+                                <td class="text-left">왕복엔진 점화 및 시동계통</td>
+                                <td class="text-left">왕복엔진 점화 및 시동계통 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">왕복엔진 윤할 및 냉각계통</td>
+                                <td class="text-left">왕복엔진 윤할 및 냉각계통 실습</td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">-</td>
+                                <td class="text-center">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">프로펠러</td>
+                                <td class="text-left">프로펠러 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">-</td>
+                                <td class="text-center">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">헬리콥터 엔진</td>
+                                <td class="text-left">헬리콥터 엔진 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">왕복엔진 장탈 및 교환</td>
+                                <td class="text-left">왕복엔진 장탈 및 교환 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">25</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">왕복엔진 정비 및 작동</td>
+                                <td class="text-left">왕복엔진 정비 및 작동 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">5</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">가스터빈엔진 점화 및 시동계통</td>
+                                <td class="text-left">가스터빈엔진 점화 및 시동계통 실습</td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">가스터빈엔진 윤활 및 냉각계통</td>
+                                <td class="text-left">가스터빈엔진 윤활 및 냉각계통 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">25</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">가스터빈엔진 장탈 및 교환</td>
+                                <td class="text-left">가스터빈엔진 장탈 및 교환 실습</td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">20</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">가스터빈엔진 장탈 및 작동</td>
+                                <td class="text-left">가스터빈엔진 장탈 및 작동 실습</td>
+                                <td class="text-center">10</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">25</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" rowspan="4">전기/전자/계기</td>
+                                <td class="text-left">기초전기 전자</td>
+                                <td class="text-left">기초전기 전자 실습</td>
+                                <td class="text-center">60</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기 전기계통</td>
+                                <td class="text-left">항공기 전기계통 실습</td>
+                                <td class="text-center">60</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기 계기계통</td>
+                                <td class="text-left">항공기 계기계통 실습</td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">-</td>
+                                <td class="text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left">항공기통신및항법계통, 자동비행장치</td>
+                                <td class="text-left">항공기통신및항법계통, 자동비행장치 실습</td>
+                                <td class="text-center">75</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">60</td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                        <label for="customRadio1" class="custom-control-label">이수</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio">
+                                        <label for="customRadio2" class="custom-control-label">미이수</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                    <button type="button" class="btn btn-primary">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 실습비 지정 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-expense">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 740px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">실습과목지정</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered mb-0">
+                        <tbody>
+                            <tr>
+                                <th>연도</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">연도선택</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>학기</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">학기선택</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>실습비 납부기간</th>
+                                <td>
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>고지서출력기간</th>
+                                <td>
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>구분</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">정비교육실습</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>교육내용</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>실습비용</th>
+                                <td>
+                                    <input type="number" class="form-control width-200px d-inline-block m-r-10"><span>원</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-danger">초기화</button>
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                        <button type="button" class="btn btn-primary">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 비밀번호 초기화 > 확인 여부-->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-reset-password">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-exclamation-circle m-b-20"></i>
+                        <p>비밀번호가 초기화 됩니다.<br>초기화 하시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-target="#modal-reset-password-success" data-dismiss="modal">확인</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 비밀번호 초기화 > 완료 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-reset-password-success" data-overlap="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <p>비밀번호가 초기화 되었습니다.</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 학생정보 수정 > 확인 여부-->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-reset-studentInfo">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-exclamation-circle m-b-20"></i>
+                        <p>학생 정보는 변경되면 수정이 어렵습니다.<br>
+                            학생정보를 변경하시겠습니까?</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary">확인</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 : 학생정보 수정  > 완료 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-reset-studentInfo-success">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>학생정보 변경이 완료 되었습니다.</p>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">확인</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-expense" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 740px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">실습과목지정</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered mb-0">
+                        <tbody>
+                            <tr>
+                                <th>연도</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">연도선택</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>학기</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">학기선택</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>실습비 납부기간</th>
+                                <td>
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px hasDatepicker" id="dp1643082298269">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px hasDatepicker" id="dp1643082298270">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>고지서출력기간</th>
+                                <td>
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px hasDatepicker" id="dp1643082298271">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px hasDatepicker" id="dp1643082298272">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>구분</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">정비교육실습</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>교육내용</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>실습비용</th>
+                                <td>
+                                    <input type="number" class="form-control width-200px d-inline-block m-r-10"><span>원</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-danger">초기화</button>
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                        <button type="button" class="btn btn-primary">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <%- include('../layout/_head.ejs')%>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <%- include('../layout/_header.ejs')%>
+
+        <%- include('../layout/_sidebar.ejs')%>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="title">강사/교관관리</h1>
+                        </div>
+                        <div class="col">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">강사/교관관리</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content" data-menu="subject">
+                <div class="container-fluid">
+                    <div class="inquery-area">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <colgroup>
+                                    <col style="width: 150px">
+                                    <col>
+                                    <col style="width: 150px">
+                                    <col>
+                                    <col style="width: 150px">
+                                    <col>
+                                </colgroup>
+                                <tr>
+                                    <th>연도 선택</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">연도 선택</option>
+                                        </select>
+                                    </td>
+                                    <th>학년 선택</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">전체</option>
+                                        </select>
+                                    </td>
+                                    <th>학기 선택</th>
+                                    <td>
+                                        <select name="" id="" class="custom-select">
+                                            <option value="">전체</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>검색</th>
+                                    <td colspan="5">
+                                        <input type="text" class="form-control" placeholder="강사명, 강사번호, 휴대폰번호 입력">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btns">
+                            <button type="button" class="btn btn-dark min-width-90px">검색</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-between align-items-end mb-3">
+                        <div class="col-auto">
+                            <b>Total : 000</b>,
+                            Page 1/3
+                        </div>
+                        <div class="col-auto">
+                            <a href="subject_form.html" class="btn btn-danger mr-1">강사과목등록</a>
+                            <button type="button" class="btn btn-outline-primary mr-1">엑셀다운로드</button>
+                            <select class="custom-select w-auto">
+                                <option>10</option>
+                                <option>30</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="main_search_result_list"> <!-- softpuzzle에서 쓰는 datatable 고정 클래스명 -->
+                        <table class="table table-bordered" id="datatable1">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="text-center">번호</th>
+                                    <th class="text-center">강사번호</th>
+                                    <th class="text-center">강사명</th>
+                                    <th class="text-center">강의학년</th>
+                                    <th class="text-center">강의학기</th>
+                                    <th class="text-center">구분</th>
+                                    <th class="text-center">과목</th>
+                                    <th class="text-center">기간</th>
+                                    <th class="text-center">강의시간</th>
+                                    <th class="text-center">경력증명</th>
+                                    <th class="text-center">관리</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(var i = 10; i > 0 ; i--){ %>
+                                <tr>
+                                    <td class="text-center"><%= i %></td>
+                                    <td class="text-center">2021001</td>
+                                    <td class="text-center"><a href="lecturer_detail.html" class="text-underline">김강사</a></td>
+                                    <td class="text-center">3학년</td>
+                                    <td class="text-center">동계학기</td>
+                                    <td class="text-center">이론</td>
+                                    <td class="text-center">왕복엔진 윤활 및 시동계통 실습</td>
+                                    <td class="text-center">2021. 07. 01 ∼ 09. 30</td>
+                                    <td class="text-center">24</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-secondary"  onclick="window.open('../util/career_certificate.html','width=800,height=800,location=no,status=no,scrollbars=yes');">보기</button>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="subject_form.html" class="btn btn-sm btn-secondary">관리</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <%- include('../layout/_pagination.ejs')%>
+                </div>
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+    <!-- ./wrapper -->
+
+    <%- include('../layout/_footer.ejs')%>
+
+    <%- include('../layout/_modal.ejs')%>
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+</body>
+
+</html>

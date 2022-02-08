@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-Compatible" content="IE=edge">
+    <title>항공정비학과 | 가톨릭관동대학교</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" sizes="192x192">
+
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.form-datepicker').datepicker({
+                format: "yyyy-mm-dd",
+                minDate: '+7',
+                closeText: "닫기",
+                prevText: "이전달",
+                nextText: "다음달",
+                currentText: "오늘",
+                monthNames: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                monthNamesShort: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                dayNames: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
+                dayNamesShort: ["(일)", "(월)", "(화)", "(수)", "(목)", "(금)", "(토)"],
+                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+                weekHeader: "주",
+                dateFormat: "yy-mm-dd",
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: true,
+                showOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                beforeShow: function(input, inst) {
+                    $('#ui-datepicker-div').addClass('datepicker-wrapper');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <button type="button" data-target="#modal-expense" data-toggle="modal">asdf</button>
+
+    <!-- 모달 : 실습비 지정 -->
+    <div class="modal" tabindex="-1" role="dialog" id="modal-expense">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 740px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">실습과목지정</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered mb-0">
+                        <tbody>
+                            <tr>
+                                <th>연도</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">연도선택</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>학기</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">학기선택</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>실습비 납부기간</th>
+                                <td>
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>고지서출력기간</th>
+                                <td>
+                                    <div class="row row-10 align-items-center">
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                        <div class="col-auto">~</div>
+                                        <div class="col-auto">
+                                            <input type="text" class="form-control form-datepicker width-200px">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>구분</th>
+                                <td>
+                                    <select name="" id="" class="custom-select width-200px">
+                                        <option value="">정비교육실습</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>교육내용</th>
+                                <td>
+                                    <input type="text" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>실습비용</th>
+                                <td>
+                                    <input type="number" class="form-control width-200px d-inline-block m-r-10"><span>원</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-danger">초기화</button>
+                    <div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">취소</button>
+                        <button type="button" class="btn btn-primary">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
